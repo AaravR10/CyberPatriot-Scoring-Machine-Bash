@@ -20,3 +20,9 @@ This will add the code so that when the command `score` is run, the scoring mach
 `source ~/.bashrc`
 
 That's it! Let me know if you have any problems
+
+
+What's Next??
+1. Crontab to make the script run every minute in order to check whether or not to send the notification
+2. HTML Page for the scoring machine
+3. Possible Python version of the scoring machine
