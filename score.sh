@@ -11,6 +11,19 @@ if [ "$EUID" -ne 0 ]; then
     exit
 fi
 
+#Function send notifications
+function send_notifications() {
+        local user=$(logname)
+        local display=":0"
+        local dbus_address="unix:path=/run/user/$(id -u $user)/bus"
+#Debugging statements
+if [ -z "$display" ] || [ -z "$dbus_address" ]; then
+        echo "Error: DISPLAY or DBUS_SESSION_BUS_ADDRESS is empty"
+        return 1
+fi
+        sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=$dbus_address notify-send "Scoring Machine" "You have gained points"
+}
+
 #Scoring variable
 score=0
 
@@ -28,6 +41,7 @@ vulnerabilities=0
 firewall_status=$(sudo ufw status | grep -i "Status: active")
 if [[ "$firewall_status" == *"Status: active"* ]]; then
     score=$((score + 5))
+    send_notifications
     echo "Firewall vulnerability fixed, for a gain of 5 points"
     echo "------------------------------------------------"
 else
@@ -39,6 +53,7 @@ fi
 #In this example the user 'user1' is used as an example
 if ! id "user1" &>/dev/null; then
     score=$((score + 5))
+    send_notifications
     echo "user1 vulnerability fixed, for a gain of 5 points"
     echo "------------------------------------------------"
 else
@@ -50,6 +65,7 @@ fi
 #In this example the file 'file' is used as an example
 if [ ! -f "/home/ubuntu/file" ]; then
     score=$((score + 5))
+    send_notifications
     echo "'file' vulnerability fixed, for a gain of 5 points"
     echo "------------------------------------------------"
 else
@@ -61,6 +77,7 @@ fi
 #In this example the package 'game1' is used as an example
 if ! dpkg -l | grep -q "game1"; then
     score=$((score + 5))
+    send_notifications
     echo "'game1' vulnerability fixed, for a gain of 5 points"
     echo "------------------------------------------------"
 else
@@ -72,6 +89,7 @@ fi
 #In this example the user 'user2' is used
 if id "user2" &>/dev/null; then
     score=$((score + 5))
+    send_notifications
     echo "'user2' added, for a gain of 5 points"
     echo "-------------------------------------------------"
 else
@@ -84,6 +102,7 @@ fi
 #When the user deletes this peice of code, we want to give them points
 if ! grep -q "sudo-fake-malicious-command" /home/ubuntu/.bashrc; then
     score=$((score + 5))
+    send_notifications
     echo "Malicious code removed from .bashrc, for a gain of 5 points"
     echo "-------------------------------------------------"
 else
@@ -96,6 +115,7 @@ fi
 #In this example, we are checking if the user has set a minimum password age
 if grep -q "PASS_MIN_DAYS    7" /etc/login.defs; then
     score=$((score + 5))
+    send_notifications
     echo "Password minimum age set, for a gain of 5 points"
     echo "--------------------------------------------------"
 else
