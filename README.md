@@ -3,6 +3,10 @@ CyberPatriot Bash Scoring Machine
 Hello!
 I'm Aarav Ragoonanan, I created this scoring machine for extra practice, but I would appreciate any feedback, thanks!
 
+**Packages Needed for this**
+- notify-send `sudo apt-get install libnotify-bin`
+- The operating system has to have a bash terminal
+
 **How to use**
 1. Copy text from score.sh
 2. Paste into file inside virtual machine (for example, score.sh)
@@ -22,7 +26,7 @@ This will add the code so that when the command `score` is run, the scoring mach
 That's it! Let me know if you have any problems
 
 
-What's Next??
+**What's Next??**
 1. Crontab to make the script run every minute in order to check whether or not to send the notification
    
    Experimental: Try `sudo crontab -e` to create the crontab for the script
