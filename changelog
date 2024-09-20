@@ -1,2 +1,3 @@
 September 8th: Original Scoring Machine
 September 19th: Added Notifications
+  Sidenote: You may think this change was ridiculously overcomplicated, but the Root privilege part of the script interfered with the 'notify-send' command, which didn't allow it to work
