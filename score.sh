@@ -12,6 +12,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 #Function send notifications
+#DO NOT EDIT Unless you don't want notifications
 function send_notifications() {
         local user=$(logname)
         local display=":0"
