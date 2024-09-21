@@ -31,12 +31,6 @@ That's it! Let me know if you have any problems
 **What's Next??**
 1. Crontab to make the script run every minute in order to check whether or not to send the notification
    
-   Experimental: Try `sudo crontab -e` to create the crontab for the script
-   
-   In the crontab write `* * * * * sudo bash /home/youruser/score.sh`
-   
-   Save the crontab
-   
-   This shouldn't actually run the script, it should only work for the notification portion of the script, so therefore whenever the user gains points, they will get a notification
+   If anyone knows how to make the crontab for this, I would appreciate the help. I've tried `sudo crontab -e` and then `* * * * * /home/youruser/score.sh` but this doesn't work. Does anyone know any other ways to do this?
 3. HTML Page for the scoring machine
 4. Possible Python version of the scoring machine
