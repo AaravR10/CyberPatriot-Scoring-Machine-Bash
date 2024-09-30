@@ -3,6 +3,11 @@ CyberPatriot Bash Scoring Machine
 Hello!
 I'm Aarav Ragoonanan, I created this scoring machine for extra practice, but I would appreciate any feedback, thanks!
 
+**Important Announcements**
+A new version of this scoring machine will be created later today. This includes:
+- Better command support
+- Crontab
+
 **Packages Needed for this**
 - The operating system has to have a bash terminal
 
