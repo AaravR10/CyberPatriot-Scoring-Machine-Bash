@@ -4,8 +4,6 @@ Hello!
 I'm Aarav Ragoonanan, I created this scoring machine for extra practice, but I would appreciate any feedback, thanks!
 
 **Packages Needed for this**
-- notify-send `sudo apt-get install libnotify-bin`
-   This is needed to send the notifications when the bash script is being run from the crontab
 - The operating system has to have a bash terminal
 
 **How to use**
