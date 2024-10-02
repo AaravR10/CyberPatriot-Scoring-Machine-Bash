@@ -4,7 +4,7 @@ Hello!
 I'm Aarav Ragoonanan, I created this scoring machine for extra practice, but I would appreciate any feedback, thanks!
 
 **Important Announcements**
-A new version of this scoring machine will be created later today. This includes:
+A new version of this scoring machine will be created soon. This includes:
 - Better command support
 - Crontab
 
