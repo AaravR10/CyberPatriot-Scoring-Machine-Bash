@@ -4,9 +4,7 @@ Hello!
 I'm Aarav Ragoonanan, I created this scoring machine for extra practice, but I would appreciate any feedback, thanks!
 
 **Important Announcements**
-A new version of this scoring machine will be created soon. This includes:
-- Better command support
-- Crontab
+A new version of this scoring machine will be slowly updated here
 
 **Packages Needed for this**
 - The operating system has to have a bash terminal
@@ -26,6 +24,22 @@ A new version of this scoring machine will be created soon. This includes:
 This will add the code so that when the command `score` is run, the scoring machine will run (just makes the process easier)
 9. Refresh the .bashrc file by running
 `source ~/.bashrc`
+
+**More on how to set it up**
+1. Go into the main user's `/Desktop` folder and create a file called `yourfilenamehere.desktop`
+2. In the file, write:
+
+`[Desktop Entry]
+Name={WhateverYouWantYourScoringMachine'sNameToBe}
+Type=Application
+Exec=bash /home/youruser/yourscoringmachinefile(score.sh)
+Icon=/home/youruser/Pictures/somerandomfile.jpeg
+Terminal=false`
+
+You don't need the `Icon` part if you don't want the scoring button on your screen to have an image.
+`Terminal=false` just prevents the scoring machine (score.sh) from being run in a terminal when this button is used. When the regular command `score` is used, it will appear in the terminal as normal.
+
+3. On the file that appears on your home screen, right click it and press `Allow Launching`. This will allow it to work properly.
 
 That's it! Let me know if you have any problems
 
